@@ -19,7 +19,9 @@ async function authenticateToken(req, res, next) {
     if (response.status !== 200) {
         return res.sendStatus(403); // Forbidden if token is invalid
     } else {
-        const user = await response.json();
+        let user = await response.json();
+        // make the first letter of the username uppercase
+        user.username = user.username.charAt(0).toUpperCase() + user.username.slice(1);
         req.user = user;
         next();
     }

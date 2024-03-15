@@ -33,9 +33,13 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-3xl mb-6 flex items-center justify-center"><span class="fa fa-sign-in mr-2"></span> Login</h1>
 
-        <% if (message.length > 0) { %>
-            <div class="alert alert-info"><%= message %></div>
+        <% if (message && message.length > 0) { %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span class="block sm:inline"><%= message %></span>
+            </div>
         <% } %>
+        
 
         <!-- LOGIN FORM -->
         <form action="/login/" method="post">

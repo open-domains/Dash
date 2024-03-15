@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
         },
     });
     data = await data.json();
+    console.log(user)
     res.render("domain", {user: user, domains: data})
 }
     
