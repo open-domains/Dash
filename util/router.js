@@ -20,7 +20,7 @@ router.get("/profile", authenticateToken, (req, res) => {
 
 
 router.get("/login", (req, res) => {
-    res.render("login", { message: '' });
+    routes.loginRedirect(req, res);
 });
 
 router.post("/login", upload.any(), (req, res) => {

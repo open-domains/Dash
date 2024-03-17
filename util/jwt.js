@@ -4,7 +4,10 @@ async function authenticateToken(req, res, next) {
     const token = req.cookies['token'];
 
     if (token == null) {
-        return res.sendStatus(401); // Unauthorized if token is not provided
+        //redirect the user
+        // get the current url
+        let redirect = req.originalUrl;
+        return res.redirect(`/login?redirect=${redirect}`);
     }
 
     // Verify the token
