@@ -9,10 +9,13 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const ejs = require("ejs");
 const multer = require('multer');
+const path = require("path");
 
 const port = process.env.PORT || 3000;
 app.use(cookieParser());
 app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, 'static')));
 
 Sentry.init({
     dsn: process.env.SENTRY_DSN,

@@ -4,8 +4,6 @@ async function authenticateToken(req, res, next) {
     const token = req.cookies['token'];
 
     if (token == null) {
-        //redirect the user
-        // get the current url
         let redirect = req.originalUrl;
         return res.redirect(`/login?redirect=${redirect}`);
     }
@@ -20,7 +18,8 @@ async function authenticateToken(req, res, next) {
     });
 
     if (response.status !== 200) {
-        return res.sendStatus(403); // Forbidden if token is invalid
+        let redirect = req.originalUrl;
+        return res.redirect(`/login?redirect=${redirect}`);
     } else {
         let user = await response.json();
         // make the first letter of the username uppercase

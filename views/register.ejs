@@ -6,6 +6,9 @@
     <title>Open-Domains Register</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="icon" 
+      type="image/png" 
+      href="/assets/logo.png" />
     <style>
         
 
@@ -33,6 +36,13 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-3xl mb-6 flex items-center justify-center"><span class="fa fa-sign-in mr-2"></span> Register</h1>
 
+        <% if (message && message.length > 0) { %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span class="block sm:inline"><%= message %></span>
+            </div>
+        <% } %>
+
         <!-- LOGIN FORM -->
         <form action="/register/" method="post">
             <div class="mb-4">
@@ -40,18 +50,22 @@
                 <input type="text" id="username" name="username" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">email</label>
+                <input type="text" id="email" name="email" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
                 <input type="password" id="password" name="password" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Confirm Password</label>
-                <input type="password" id="cpassword" name="password" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <input type="password" id="cpassword" name="cpassword" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
                 <div class="g-recaptcha" data-sitekey="6LdvAnwpAAAAAEjOh8Kb_Zj3uDHkPgAyYoeR7rXt" required></div>
             </div>
 
-            <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded-md focus:outline-none focus:shadow-outline">Login</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md focus:outline-none focus:shadow-outline">Register</button>
         </form>
 
         <hr class="my-6">

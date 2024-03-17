@@ -28,7 +28,11 @@ router.post("/login", upload.any(), (req, res) => {
 });
 
 router.get("/register", (req, res) => {
-    res.render("register");
+    res.render("register", { message: "" });
+});
+
+router.post("/register", upload.any(), (req, res) => {
+    routes.register(req, res);
 });
 
 router.get("/domains", authenticateToken, (req, res) => {
@@ -37,6 +41,10 @@ router.get("/domains", authenticateToken, (req, res) => {
 
 router.get("/verify", (req, res) => {
     routes.verify(req, res);
+});
+
+router.get("/logout", (req, res) => {
+    routes.logout(req, res);
 });
 
 

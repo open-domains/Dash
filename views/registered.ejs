@@ -12,27 +12,15 @@
 <body>
 <div class="min-h-screen bg-gray-900 flex justify-center items-center">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
-        <% if (pass) { %>
             <h1 class="text-3xl mb-6 flex items-center justify-center">
-                <span class="fas fa-check-circle text-green-500 mr-2"></span> Email Verified
+                <span class="fas fa-exclamation-triangle text-red-500 mr-2"></span> Registration Complete
             </h1>
 
-            <p class="text-gray-700">Congratulations! Your email has been successfully verified.</p>
-
-            <hr class="my-6">
-
-            <p class="text-gray-700">Want to <a href="/login/" class="text-blue-500">Login</a>?</p>
-        <% } else { %>
-            <h1 class="text-3xl mb-6 flex items-center justify-center">
-                <span class="fas fa-exclamation-triangle text-red-500 mr-2"></span> Email Verification Failed
-            </h1>
-
-            <p class="text-gray-700">Sorry, we were unable to verify your email. Please try again.</p>
+            <p class="text-gray-700">Please Confirm your email by clicking the link we just sent you.</p>
 
             <hr class="my-6">
 
             <p class="text-gray-700">Want to <a href="/register/" class="text-blue-500">Register</a>?</p>
-        <% } %>
     </div>
 </div>
 </body>

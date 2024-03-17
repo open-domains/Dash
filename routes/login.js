@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
     const redirect = req.query.redirect;
 
     if (!username || !password) {
-        return res.render("login", { message: "Missing username or password." });
+        return res.render("login", { message: "Missing username or password.", redirect });
     }
     const data = {
         "username": username,
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     });
     const authd = await response.json();
     if (authd.message) {
-        return res.render("login", { message: authd.message });
+        return res.render("login", { message: authd.message, redirect });
     }
     res.cookie("token", authd.accessToken, { httpsOnly: true });
     if (redirect) {

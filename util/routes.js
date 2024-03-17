@@ -4,6 +4,7 @@ const loginRedirect = require("../routes/loginRedirect");
 const register = require("../routes/register");
 const domain = require("../routes/domains");
 const verify = require("../routes/verify");
+const logout = require("../routes/logout");
 
 
 module.exports = {
@@ -12,5 +13,6 @@ module.exports = {
     loginRedirect,
     register,
     domain,
-    verify
+    verify,
+    logout
 }
