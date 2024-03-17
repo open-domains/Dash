@@ -35,5 +35,9 @@ router.get("/domains", authenticateToken, (req, res) => {
     routes.domain(req, res);
 });
 
+router.get("/verify", (req, res) => {
+    routes.verify(req, res);
+});
+
 
 module.exports = router;
