@@ -5,6 +5,8 @@ const register = require("../routes/register");
 const domain = require("../routes/domains");
 const verify = require("../routes/verify");
 const logout = require("../routes/logout");
+const staff = require("../routes/staff");
+const mfa = require("../routes/mfa");
 
 
 module.exports = {
@@ -14,5 +16,7 @@ module.exports = {
     register,
     domain,
     verify,
-    logout
+    logout,
+    staff,
+    mfa
 }

@@ -16,10 +16,8 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">My Domains</a>
-                <% if (user.staffMember) { %>
+                <a href="/domains/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">My Domains</a>
                   <a href="/staff/" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Staff</a>
-                <% } %>
                 <a href="https://www.buymeacoffee.com/andrewstech" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Donate</a>
 
               </div>
@@ -127,9 +125,9 @@
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
         <div class="mt-8">
-          <h2 class="text-xl font-bold mb-4">Domain List</h2>
+          <h2 class="text-xl font-bold mb-4">Domains Awaiting approval</h2>
           <% if (domains.length === 0) { %>
-              <p class="text-gray-600">You have no domains.</p>
+              <p class="text-gray-600">All caught up!</p>
           <% } else { %>
               <table class="w-full border-collapse border border-gray-300">
                   <thead>

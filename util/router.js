@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { authenticateToken } = require("./jwt");
+const { authenticateToken, authenticateStaffToken } = require("./jwt");
 
 const bodyParser = require("body-parser");
 const multer = require('multer');
@@ -39,12 +39,24 @@ router.get("/domains", authenticateToken, (req, res) => {
     routes.domain(req, res);
 });
 
+router.get("/settings", authenticateToken, (req, res) => {
+    res.render("settings", { message: "" });
+});
+
 router.get("/verify", (req, res) => {
     routes.verify(req, res);
 });
 
 router.get("/logout", (req, res) => {
     routes.logout(req, res);
+});
+
+router.get("/staff", authenticateStaffToken, (req, res) => {
+    routes.staff(req, res);
+});
+
+router.get("/mfa-setup", authenticateToken, (req, res) => {
+    routes.mfa(req, res);
 });
 
 
