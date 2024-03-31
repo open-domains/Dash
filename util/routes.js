@@ -7,6 +7,7 @@ const verify = require("../routes/verify");
 const logout = require("../routes/logout");
 const staff = require("../routes/staff");
 const mfa = require("../routes/mfa");
+const password = require("../routes/password");
 
 
 module.exports = {
@@ -18,5 +19,6 @@ module.exports = {
     verify,
     logout,
     staff,
-    mfa
+    mfa,
+    password
 }

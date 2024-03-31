@@ -59,5 +59,9 @@ router.get("/mfa-setup", authenticateToken, (req, res) => {
     routes.mfa(req, res);
 });
 
+router.post("/password", authenticateToken, upload.any(), (req, res) => {
+    routes.password(req, res);
+});
+
 
 module.exports = router;

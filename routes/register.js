@@ -36,6 +36,9 @@ module.exports = async (req, res) => {
         if (response.status === 500) {
             return res.render("register", { message: "Internal server error." });
         }
+        if (response.status === 451) {
+            return res.render("register", { message: response.body.message });
+        }
         if (response.status === 200) {
             return res.render("registered");
         }
