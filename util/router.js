@@ -63,5 +63,9 @@ router.post("/password", authenticateToken, upload.any(), (req, res) => {
     routes.password(req, res);
 });
 
+router.get("/edit/", authenticateToken, (req, res) => {
+    routes.edit(req, res);
+});
+
 
 module.exports = router;

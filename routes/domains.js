@@ -1,7 +1,10 @@
+const e = require("express");
+
 const ENDPOINT = process.env.ENDPOINT;
 module.exports = async (req, res) => {
     const user = req.user;
     const token = req.cookies.token;
+    const code = req.query.code;
     let data = await fetch(ENDPOINT + `/domains` , {
         method: 'GET',
         headers: {
@@ -10,6 +13,24 @@ module.exports = async (req, res) => {
         },
     });
     data = await data.json();
-    res.render("domain", {user: user, domains: data})
+
+    if (code){
+        if (code == 1){
+            return res.render("domain", {user: user, domains: data, message: "System error, please try again later"});
+        }
+        if (code == 2){
+            return res.render("domain", {user: user, domains: data, message: "Domain not found"});
+        }
+        if (code == 3){
+            return res.render("domain", {user: user, domains: data, message: "Domain already exists"});
+        }
+        if (code == 4){
+            return res.render("domain", {user: user, domains: data, message: "You do not have permission to edit this domain"});
+        }
+    } else {
+        return res.render("domain", {user: user, domains: data, message: ""});
+    }
+
+
 }
     
