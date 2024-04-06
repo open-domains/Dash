@@ -67,5 +67,8 @@ router.get("/edit/", authenticateToken, (req, res) => {
     routes.edit(req, res);
 });
 
+router.get("/admin/", authenticateStaffToken, (req, res) => {
+    routes.admin(req, res);
+});
 
 module.exports = router;

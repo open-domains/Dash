@@ -58,7 +58,7 @@ async function authenticateStaffToken(req, res, next) {
         if (user.staffMember) {
             next();
         } else {
-            return res.redirect(`/domains`);
+            return res.redirect(`/domains?code=5`);
         }
         
     }

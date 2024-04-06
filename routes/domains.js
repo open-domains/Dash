@@ -27,6 +27,11 @@ module.exports = async (req, res) => {
         if (code == 4){
             return res.render("domain", {user: user, domains: data, message: "You do not have permission to edit this domain"});
         }
+        if (code == 5){
+            return res.render("domain", {user: user, domains: data, message: "You do not have permission to access this page"});
+        } else {
+            return res.render("domain", {user: user, domains: data, message: ""});
+        }
     } else {
         return res.render("domain", {user: user, domains: data, message: ""});
     }
