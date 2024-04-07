@@ -10,6 +10,7 @@ const mfa = require("../routes/mfa");
 const password = require("../routes/password");
 const edit = require("../routes/edit");
 const admin = require("../routes/admin");
+const adminUser = require("../routes/adminUser");
 
 
 module.exports = {
@@ -24,5 +25,6 @@ module.exports = {
     mfa,
     password,
     edit,
-    admin
+    admin,
+    adminUser
 }

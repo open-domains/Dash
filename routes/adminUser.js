@@ -1,11 +1,9 @@
-const ENDPOINT = process.env.ENDPOINT;
 module.exports = async (req, res) => {
-    const user = req.user;
-    const token = req.cookies.token;
-    let data = ''
+    let user = req.user;
     if (!user.admin){
         return res.redirect("/domains?code=5");
     }
+    let data = ''
     try {
         const response = await fetch(`${ENDPOINT}/users`, {
             method: 'GET',
@@ -15,11 +13,10 @@ module.exports = async (req, res) => {
             }
         });
         data = await response.json();
-    res.render("admin", {user: user, users: data, message: ''})
-
-    } catch (error) {
+        res.render("adminUser", {user: user, users: data, message: ''})
+    }
+    catch (error) {
         console.log(error)
-        res.render("admin", {user: user, users: data, message: 'fetching bitches. Please try again later.'})
+        res.render("adminUser", {user: user, users: data, message: 'fetching bitches. Please try again later.'})
     }
 }
-    

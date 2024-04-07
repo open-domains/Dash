@@ -71,4 +71,13 @@ router.get("/admin/", authenticateStaffToken, (req, res) => {
     routes.admin(req, res);
 });
 
+router.get("/admin/users", authenticateStaffToken, (req, res) => {
+    routes.adminUser(req, res);
+});
+
+router.get("/admin/del", authenticateStaffToken, (req, res) => {
+    routes.adminUser(req, res);
+});
+
+
 module.exports = router;
