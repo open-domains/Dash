@@ -14,7 +14,13 @@ module.exports = async (req, res) => {
                 'authorization': token
             }
         });
+        console.log(response)
         data = await response.json();
     res.render("admin", {user: user, users: data, message: ''})
+
+    } catch (error) {
+        console.log(error)
+        res.render("admin", {user: user, users: data, message: 'Error fetching bitches. Please try again later.'})
+    }
 }
     
