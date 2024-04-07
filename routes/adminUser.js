@@ -13,10 +13,10 @@ module.exports = async (req, res) => {
             }
         });
         data = await response.json();
-        res.render("adminUser", {user: user, users: data, message: ''})
+        res.render("adminUser", {user: user, users: data, message: '', domain: ''})
     }
     catch (error) {
         console.log(error)
-        res.render("adminUser", {user: user, users: data, message: 'fetching bitches. Please try again later.'})
+        res.render("adminUser", {user: user, users: data, message: 'fetching bitches. Please try again later.', domain: ''})
     }
 }
