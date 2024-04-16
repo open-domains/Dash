@@ -16,24 +16,24 @@ module.exports = async (req, res) => {
 
     if (code){
         if (code == 1){
-            return res.render("domain", {user: user, domains: data, message: "System error, please try again later"});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: "System error, please try again later"});
         }
         if (code == 2){
-            return res.render("domain", {user: user, domains: data, message: "Domain not found"});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: "Domain not found"});
         }
         if (code == 3){
-            return res.render("domain", {user: user, domains: data, message: "Domain already exists"});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: "Domain already exists"});
         }
         if (code == 4){
-            return res.render("domain", {user: user, domains: data, message: "You do not have permission to edit this domain"});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: "You do not have permission to edit this domain"});
         }
         if (code == 5){
-            return res.render("domain", {user: user, domains: data, message: "You do not have permission to access this page"});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: "You do not have permission to access this page"});
         } else {
-            return res.render("domain", {user: user, domains: data, message: ""});
+            return res.render("domain", {user: user, jwt: token, domains: data, message: ""});
         }
     } else {
-        return res.render("domain", {user: user, domains: data, message: ""});
+        return res.render("domain", {user: user, jwt: token, domains: data, message: ""});
     }
 
 
