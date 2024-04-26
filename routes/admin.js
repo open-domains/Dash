@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
             }
         });
         data = await response.json();
+        console.log(data)
     res.render("admin", {user: user, users: data, message: ''})
 
     } catch (error) {

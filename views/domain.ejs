@@ -94,7 +94,10 @@
           <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">My domains</a>
           <% if (user.staffMember) { %>
               <a href="/staff/" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Staff</a>
-          <% } %>    
+          <% } %>
+          <% if (user.admin) { %>    
+              <a href="/admin/" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Admin</a>
+          <% } %> 
           <a href="https://www.buymeacoffee.com/andrewstech" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Donate</a>
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">

@@ -146,6 +146,7 @@
                     <tr>
                         <th class="py-2 px-4 bg-gray-200 text-left">ID</th>
                         <th class="py-2 px-4 bg-gray-200 text-left">Username</th>
+                        <th class="py-2 px-4 bg-gray-200 text-left">Staff</th>
                         <th class="py-2 px-4 bg-gray-200"></th> <!-- Empty header for Edit button -->
                     </tr>
                 </thead>
@@ -154,6 +155,7 @@
                         <tr>
                             <td class="py-2 px-4 border border-gray-300"><%= user._id %></td>
                             <td class="py-2 px-4 border border-gray-300"><%= user.username %></td>
+                            <td class="py-2 px-4 border border-gray-300"><%= user.staffMember %></td>
                             <td class="py-2 px-4 border border-gray-300">
                                 <a href="/admin/users?id=<%= user._id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</a>
                                 <a href="/admin/del?id=<%= user._id %>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</a>
