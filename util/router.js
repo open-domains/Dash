@@ -79,5 +79,14 @@ router.get("/admin/del", authenticateStaffToken, (req, res) => {
     routes.adminUser(req, res);
 });
 
+router.get("/login/magic", (req, res) => {
+    const key = req.query.key;
+    if (!key) {
+        return res.redirect("/login");
+    }
+    res.cookie("token", key, { httpsOnly: true });
+    res.redirect("/domains");
+});
+
 
 module.exports = router;
