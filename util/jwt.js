@@ -5,7 +5,7 @@ async function authenticateToken(req, res, next) {
 
     if (token == null) {
         let redirect = req.originalUrl;
-        return res.redirect(`/login?redirect=${redirect}`);
+        return res.redirect(`https://github.com/login/oauth/authorize?client_id=37ca1e9a943e32b00ac8&scope=public_repo%20user:email&redirect_uri=https://api.open-domains.net/__/auth/handler?redirect=${redirect}`);
     }
 
     // Verify the token
@@ -35,7 +35,7 @@ async function authenticateStaffToken(req, res, next) {
 
     if (token == null) {
         let redirect = req.originalUrl;
-        return res.redirect(`/login?redirect=${redirect}`);
+        return res.redirect(`https://github.com/login/oauth/authorize?client_id=37ca1e9a943e32b00ac8&scope=public_repo%20user:email&redirect_uri=https://api.open-domains.net/__/auth/handler?redirect=${redirect}`);
     }
 
     // Verify the token
