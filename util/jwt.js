@@ -2,11 +2,12 @@ const ENDPOINT = process.env.ENDPOINT;
 async function authenticateToken(req, res, next) {
     // get a token from the query if it exists
     const qtoken = req.query.token;
+    let token = req.cookies['token'];
     if (qtoken) {
-        res.cookie('token', qtoken, { maxAge: 900000, httpOnly: true });
+        token = qtoken;
+        // set the token in the cookie
+        res.cookie('token', token, { maxAge: 900000, httpOnly: true });
     }
-    //get the token from the Auth cookie
-    const token = req.cookies['token'];
 
     if (token == null) {
         let redirect = req.originalUrl;
