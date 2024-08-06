@@ -19,11 +19,6 @@ router.get("/profile", authenticateToken, (req, res) => {
 });
 
 
-router.get("/login", (req, res) => {
-    routes.loginRedirect(req, res);
-});
-
-
 
 router.get("/domains", authenticateToken, (req, res) => {
     routes.domain(req, res);
@@ -43,10 +38,6 @@ router.get("/staff", authenticateStaffToken, (req, res) => {
 });
 
 
-
-router.post("/password", authenticateToken, upload.any(), (req, res) => {
-    routes.password(req, res);
-});
 
 router.get("/edit/", authenticateToken, (req, res) => {
     routes.edit(req, res);
